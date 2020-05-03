@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 # from django.http import HttpResponse
 # from django.template import loader
 
@@ -18,9 +18,8 @@ def listing(request):
 
 
 def detail(request, album_id):
-    album = Album.objects.get(pk=album_id)
-    artists = " ".join([artist.name for artist in album.artists.all()])
-    artists_name = " ".join(artists)
+    album = get_object_or_404(Album, pk=album_id)
+    artists_name = " ".join([artist.name for artist in album.artists.all()])
     context = {
         'album_title': album.title,
         'artist_name': artists_name,
@@ -32,6 +31,7 @@ def detail(request, album_id):
 
 def search(request):
     query = request.GET.get('query')
+    
 
     if not query:
         albums = Album.objects.all()

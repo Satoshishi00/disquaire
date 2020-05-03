@@ -25,7 +25,7 @@ SECRET_KEY = '+j-2(tx4k+a^psm$)=pb1miv56+$)-aotfk1sp#7sn=d64j_e*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -125,5 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# STATIC_ROOT = "/Users/yliesrochdi/Documents/Python/Django_disques/disquaire_project/store/static/"
 
 INTERNAL_IPS = ['127.0.0.1']
