@@ -1,0 +1,1 @@
+web: gunicorn disquare_project.wsgi
